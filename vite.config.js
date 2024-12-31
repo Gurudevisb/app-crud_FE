@@ -5,7 +5,7 @@ export default defineConfig({
 
     server: {
         host: '0.0.0.0',   // Bind to all interfaces
-        port: 8000,         // Ensure the port is correctly set
+        port: 5173,         // Ensure the port is correctly set
       },
 
 
