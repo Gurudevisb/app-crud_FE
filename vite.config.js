@@ -18,8 +18,7 @@ export default defineConfig({
 
 
     build: {
-        outDir: 'public/build',
-        emptyOutDir: true,
+        outDir: 'dist', // Ensure output directory is set
     },
 
 });
