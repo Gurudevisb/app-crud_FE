@@ -1,25 +1,26 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
-
-
 export default defineConfig({
+
     server: {
-        host: '0.0.0.0',
-        port: 5173,
-    },
+        host: '0.0.0.0',   // Bind to all interfaces
+        port: 5173,         // Ensure the port is correctly set
+      },
+
+
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
     ],
+
+
     build: {
-        outDir: 'public/build', // Build into Laravel's `public/build`
-        rollupOptions: {
-            input: {
-                main: 'resources/js/app.js',
-            },
-        },
+        outDir: 'dist', // Default output directory
     },
+
+
+
 });
