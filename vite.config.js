@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
+
+// Log the TEST_URL environment variable
+console.log('TEST_URL:', process.env.TEST_URL);
+
 export default defineConfig({
 
     server: {
@@ -20,5 +24,7 @@ export default defineConfig({
     build: {
         outDir: 'dist', // Ensure output directory is set
     },
+
+    
 
 });
