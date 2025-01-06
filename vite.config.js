@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import dotenv from 'dotenv';
 
+// Load environment variables from .env file
+dotenv.config();
 
 // Log the TEST_URL environment variable
 console.log('VITE_APP_URL:', process.env.VITE_APP_URL);
