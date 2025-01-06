@@ -3,7 +3,8 @@ import laravel from 'laravel-vite-plugin';
 
 
 // Log the TEST_URL environment variable
-console.log('TEST_URL:', process.env.TEST_URL);
+console.log('VITE_APP_URL:', process.env.VITE_APP_URL);
+
 
 export default defineConfig({
 
