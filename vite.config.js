@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   plugins: [
@@ -7,17 +8,20 @@ export default defineConfig({
       input: ['resources/css/app.css', 'resources/js/app.js'],
       refresh: true,
     }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: '_redirects', // Make sure this file exists in the project root
+          dest: '.', // Copy it to the root of the dist folder
+        },
+      ],
+    }),
   ],
   server: {
-    host: true, // Allows external access
-    port: 5173, // Vite default port
-    hmr: {
-      protocol: 'wss', // WebSocket Secure for HTTPS
-      host: 'app-crud-fe-9.onrender.com', // Your custom URL
-      clientPort: 443, // HTTPS uses port 443
-    },
+    host: true,
+    port: 5173,
   },
   build: {
-    outDir: 'dist', // Default output directory for production build
+    outDir: 'dist', // Build output directory
   },
 });
