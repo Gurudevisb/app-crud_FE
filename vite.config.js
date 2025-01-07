@@ -17,4 +17,7 @@ export default defineConfig({
       clientPort: 443, // HTTPS uses port 443
     },
   },
+  build: {
+    outDir: 'dist', // Default output directory for production build
+  },
 });
